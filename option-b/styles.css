@@ -82,7 +82,7 @@ fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
 
 /* Switcher padding override: the library rule pads every last-of-type body child.
    All page content lives in .page, so only .page needs resetting. */
-html body > div.page { padding-bottom: 0; }
+html body > div.page.page { padding-bottom: 0; }
 
 :focus-visible { outline: 3px solid #2f6fd6; outline-offset: 3px; border-radius: 6px; }
 
@@ -547,6 +547,11 @@ html body > div.page { padding-bottom: 0; }
 
 /* Wide screens: widen the column a bit, type already scales via root size */
 @media (min-width: 110em) { :root { --wrap: 82rem; } }
+/* Very wide screens: scale the whole page up so it fills ~60-70% of the width at 1440-like density */
+@media (min-width: 2200px) {
+  html { font-size: clamp(125%, 0.78vw, 160%); }
+  :root { --wrap: 84rem; }
+}
 
 /* Gentle entrance, only when JS is running and motion is allowed */
 .js-motion [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 500ms var(--ease), transform 500ms var(--ease); }
@@ -591,3 +596,26 @@ html body > div.page { padding-bottom: 0; }
 
 .sticker-line { display: block; white-space: nowrap; }
 @media (min-width: 110em) { .hero-art { max-width: 32rem; } }
+
+/* Short desktop viewports: keep the hero's trust points above the bottom-left switcher zone */
+@media (min-width: 60em) and (max-height: 900px) {
+  .hero { padding-top: 2.5rem; }
+  .hero h1 { line-height: 1.02; }
+  .hero-lede { margin-top: 1.25rem; }
+  .hero-actions { margin-top: 1.75rem; }
+  .trust { margin-top: 1.5rem; }
+}
+@media (min-width: 60em) and (max-height: 780px) {
+  .hero { padding-top: 1.75rem; }
+  .hero h1 { font-size: min(var(--h1), 3.7rem); }
+  .hero-lede { font-size: 1.1rem; }
+  .hero-art { max-width: 27rem; }
+}
+/* Phones: trust points sit under the hero art so the switcher corner only overlaps decoration.
+   Visual order only; the list has no focusable content, so focus order is unchanged. */
+@media (max-width: 39.99em) {
+  .hero-grid { gap: 0; }
+  .hero-copy { display: contents; }
+  .hero-art { order: 10; margin-top: 1.5rem; }
+  .trust { order: 11; margin-top: 1.5rem; }
+}

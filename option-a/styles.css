@@ -56,6 +56,10 @@
     -webkit-text-size-adjust: 100%;
     background: var(--bg);
   }
+  @media (min-width: 2200px) {
+    html { font-size: calc(4px + 0.72vw); }   /* 20px at 2200, 27px at 3200 */
+    :root { --wrap: 96rem; }
+  }
   body {
     font-family: var(--font-body);
     font-size: 1rem;
@@ -283,29 +287,27 @@ html body > .preview-bar.preview-bar { padding-block: 0.45rem; }
   .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
 
   .trust {
-    display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; margin-top: 2rem;
-    padding-top: 1.5rem; border-top: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem;
     font-size: 0.9rem; color: var(--text-2);
   }
   .trust li { display: inline-flex; align-items: center; gap: 0.45rem; }
   .trust svg { color: var(--line); }
 
   /* The stage: photo and the line share one coordinate box (1280 x 848) */
-  .hero-figure { position: relative; margin-inline: calc(var(--gutter) * -1); }
-  .shield-stage { position: relative; aspect-ratio: 1280 / 848; }
+  .hero-visual { display: grid; gap: 1.5rem; }
+  .hero-figure { position: relative; }
+  .shield-stage {
+    position: relative; aspect-ratio: 1280 / 848;
+    border-radius: var(--radius); overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(61,242,154,0.28), 0 0 0 6px rgba(61,242,154,0.05), 0 40px 90px -40px rgba(61,242,154,0.45);
+  }
   .shield-stage img {
     position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-    filter: saturate(0.85) contrast(1.06) brightness(0.92);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 16%, #000 90%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 22%, #000 84%, transparent 100%);
-    -webkit-mask-composite: source-in;
-    mask-image: linear-gradient(to right, transparent 0%, #000 16%, #000 90%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 22%, #000 84%, transparent 100%);
-    mask-composite: intersect;
+    filter: saturate(0.85) contrast(1.06) brightness(0.9);
   }
-  .shield-stage::before { /* dusk grade over the sky so the line reads */
+  .shield-stage::before { /* dusk grade so the line reads against the sky */
     content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 16%, #000 90%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, #000 16%, #000 90%, transparent 100%);
-    background: linear-gradient(to bottom, rgba(4,17,11,0.5) 0%, rgba(4,17,11,0.2) 40%, transparent 60%, transparent 80%, rgba(4,17,11,0.55) 100%);
+    background: linear-gradient(to bottom, rgba(4,17,11,0.55) 0%, rgba(4,17,11,0.2) 40%, transparent 60%, transparent 78%, rgba(4,17,11,0.5) 100%);
   }
   .shield-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; overflow: visible; }
   .shield-line, .shield-halo {
@@ -352,18 +354,16 @@ html body > .preview-bar.preview-bar { padding-block: 0.45rem; }
     .hero {
       min-height: min(calc(100svh - var(--bar-h) - var(--header-h)), 1000px);
       display: grid; align-items: center;
+      padding-block: 2.5rem 4rem;
     }
     .hero-grid { grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); gap: clamp(2rem, 4vw, 5rem); }
-    .hero-figure {
-      margin-inline: 0 calc(var(--gutter) * -1);
-      /* keep the stage from overflowing the capped hero height */
-      max-width: calc((min(100svh, 1000px) - 12rem) * 1.509);
+    .hero-visual {
+      /* keep stage + trust row inside the capped hero height */
+      max-width: calc((min(100svh, 1100px) - 12.5rem) * 1.509);
       width: 100%;
       justify-self: end;
     }
-  }
-  @media (min-width: 1600px) {
-    .hero-figure { margin-inline: 0; max-width: calc((min(100svh, 1100px) - 6rem) * 1.509); }
+    .trust { font-size: 0.85rem; gap: 0.4rem 1.1rem; }
   }
   @media (min-width: 2400px) {
     .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }

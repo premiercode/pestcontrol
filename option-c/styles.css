@@ -28,8 +28,8 @@
   --font-text: "Source Serif 4", "Iowan Old Style", Georgia, "Times New Roman", serif;
   --font-label: "IM Fell English SC", "Cormorant Garamond", Georgia, serif;
 
-  --text-xs: 0.8125rem;
-  --text-sm: 0.9375rem;
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
   --text-base: 1.0625rem;
   --text-lg: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
   --text-xl: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
@@ -44,7 +44,7 @@
 
   --wrap: 82rem;
   --gutter: clamp(1.25rem, 4vw, 3rem);
-  --margin-col: 12rem;
+  --margin-col: 13rem;
 
   --radius: 2px;
   --ease: cubic-bezier(.2, .6, .2, 1);
@@ -55,8 +55,8 @@
 
 /* Scale the whole page on very wide screens so content never becomes an island */
 @media (min-width: 1800px) { html { font-size: 112.5%; } }
-@media (min-width: 2400px) { html { font-size: 131.25%; } :root { --wrap: 86rem; } }
-@media (min-width: 3000px) { html { font-size: 162.5%; } :root { --wrap: 90rem; } }
+/* 18px at 2200 rising to ~22.5px (1.4x) at 3200; container widens with it to ~65% of the screen */
+@media (min-width: 2200px) { html { font-size: clamp(18px, 0.45vw + 8.1px, 23px); } :root { --wrap: 96rem; } }
 
 /* --------------------------------------------------------------------------
    Base
@@ -259,7 +259,7 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
   color: var(--madder);
   background: rgba(248, 242, 228, .7);
   font-family: var(--font-text);
-  font-size: .6875rem;
+  font-size: .75rem;
   font-weight: 600;
   font-style: normal;
   letter-spacing: .1em;
@@ -475,7 +475,7 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
   list-style: none;
   display: grid; gap: var(--s-4);
   font-size: var(--text-sm);
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--ink-soft);
 }
 .field-notes-list li { position: relative; padding-left: 1.4rem; }
@@ -517,7 +517,7 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
 .specimen-copy {
   margin-top: var(--s-3);
   font-size: var(--text-sm);
-  line-height: 1.6;
+  line-height: 1.58;
   color: var(--ink-soft);
 }
 
@@ -747,7 +747,7 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
 .step-icon { grid-row: 1 / span 3; width: 3rem; height: 3rem; color: var(--olive); }
 .step-num { font-size: var(--text-sm); color: var(--madder); }
 .step-name { font-family: var(--font-display); font-weight: 600; font-size: var(--text-xl); line-height: 1.15; }
-.step p:last-child { margin-top: var(--s-2); color: var(--ink-soft); font-size: var(--text-sm); }
+.step p:last-child { margin-top: var(--s-2); color: var(--ink-soft); font-size: var(--text-base); }
 .process-plate .plate-frame { aspect-ratio: 3 / 2; }
 
 @media (min-width: 720px) {
