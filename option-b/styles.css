@@ -588,3 +588,4 @@ html body > div.page.page { padding-bottom: 0; }
 @media (max-width: 479px) { .site-header .wordmark * { white-space: nowrap; } .site-header .btn { white-space: nowrap; } .header-inner { gap: 0.6rem; } }
 
 .nav-menu ul { max-height: calc(100dvh - 4.5rem); overflow-y: auto; overscroll-behavior: contain; }
+@media (max-width: 21.2em) { .nav-menu ul { max-height: calc(100dvh - 8rem); } }
