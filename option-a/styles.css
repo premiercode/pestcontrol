@@ -849,3 +849,5 @@ html body > .preview-bar.preview-bar { padding-block: 0.45rem; }
 
 /* keep the phone header on one row at 360-479px */
 @media (max-width: 479px) { .site-header .wordmark * { white-space: nowrap; } .site-header .btn { white-space: nowrap; } .header-inner { gap: 0.6rem; } }
+
+.nav-menu ul { max-height: calc(100dvh - 4.5rem); overflow-y: auto; overscroll-behavior: contain; }

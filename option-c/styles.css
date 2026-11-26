@@ -1132,3 +1132,6 @@ h2.footer-head, h3.next-steps-title { font-weight: 400; line-height: inherit; ma
 
 /* keep the phone header on one row at 360-479px */
 @media (max-width: 479px) { .site-header .wordmark * { white-space: nowrap; } .site-header .btn { white-space: nowrap; } .header-inner { gap: 0.6rem; } }
+
+.nav-menu ul { max-height: calc(100dvh - 4.5rem); overflow-y: auto; overscroll-behavior: contain; }
+@media (max-width: 479px) { .nav-menu ul { left: auto; right: 0; min-width: 0; width: max-content; max-width: calc(100vw - 2.5rem); } }

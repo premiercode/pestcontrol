@@ -573,7 +573,7 @@ html body > div.page.page { padding-bottom: 0; }
 .nav-menu a { display: flex; align-items: center; min-height: 2.75rem; padding: 0 0.85rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; color: var(--ink); }
 .nav-menu a:hover { background: var(--accent-50); }
 @media (min-width: 72em) { .nav-menu { display: none; } }
-@media (max-width: 21.2em) { .header-inner { flex-wrap: wrap; justify-content: center; } .wordmark { margin-right: 0; } }
+@media (max-width: 21.2em) { .header-inner { flex-wrap: wrap; justify-content: center; } .wordmark { margin-right: 0; } html { scroll-padding-top: 8rem; } }
 
 /* phones: icon-only menu button; hero already shows a call link, so drop the header phone */
 .nav-menu summary { gap: 0.45rem; }
@@ -586,3 +586,5 @@ html body > div.page.page { padding-bottom: 0; }
 
 /* keep the phone header on one row at 360-479px */
 @media (max-width: 479px) { .site-header .wordmark * { white-space: nowrap; } .site-header .btn { white-space: nowrap; } .header-inner { gap: 0.6rem; } }
+
+.nav-menu ul { max-height: calc(100dvh - 4.5rem); overflow-y: auto; overscroll-behavior: contain; }

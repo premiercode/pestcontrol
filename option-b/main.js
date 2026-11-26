@@ -52,3 +52,14 @@
     });
   }
 })();
+
+/* Header menu (<details>): close on link choice, Escape, or focus leaving it. Runs regardless of motion settings. */
+(function () {
+  var menu = document.querySelector('.nav-menu');
+  if (!menu) return;
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) menu.open = false; });
+  menu.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
+  });
+  menu.addEventListener('focusout', function (e) { if (!menu.contains(e.relatedTarget)) menu.open = false; });
+})();
