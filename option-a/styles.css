@@ -363,6 +363,9 @@ html body > .preview-bar.preview-bar { padding-block: 0.45rem; }
     .hero { padding-top: 1.75rem; }
     .hero-copy > .eyebrow { display: none; }  /* lede already says Denton; keeps the shield on the first screen */
     .shield-legend { display: none; }
+    /* keep the trust ticks out of the switcher zone on the first screen */
+    .hero-visual { gap: 2.5rem; }
+    .trust { padding-top: 2.5rem; border-top: 1px solid var(--border); }
   }
   @media (max-width: 479px) {
     .shield-line { stroke-width: 10; }

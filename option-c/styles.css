@@ -389,6 +389,9 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
   color: var(--madder);
 }
 .kicker-rule { width: 2.5rem; height: 1px; background: var(--madder); flex: none; }
+@media (max-width: 479px) {
+  .lede-more { display: none; }
+}
 @media (max-width: 639px) {
   .kicker { flex-direction: column; align-items: flex-start; gap: var(--s-2); }
   .hero-title { margin-top: var(--s-3); }
@@ -442,6 +445,8 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
 }
 
 .hero-plate .plate-frame { aspect-ratio: 4 / 3; }
+/* Plate I: 4:3, house fills the frame, roofline in the upper third, less lawn */
+.hero-plate .crop img { object-fit: cover; transform: scale(1.45); transform-origin: 50% 71%; }
 
 @media (min-width: 1024px) {
   .hero { padding-block: clamp(2rem, 1rem + 2vw, 3.5rem) clamp(3rem, 2rem + 2vw, 4.5rem); }
@@ -468,13 +473,6 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
   }
   .hero-margin .plate-label { color: var(--madder); }
   .hero-margin-rule { width: 1px; flex: 1; max-height: 14rem; background: var(--rule-strong); }
-  .hero-plate .plate-frame { aspect-ratio: 5 / 4.4; }
-}
-@media (min-width: 1440px) {
-  .hero-plate .plate-frame { aspect-ratio: 6 / 4.6; }
-}
-@media (min-width: 1800px) {
-  .hero-plate .plate-frame { aspect-ratio: 6 / 5.2; }
 }
 
 /* --------------------------------------------------------------------------
@@ -545,7 +543,9 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
 .pos-scorp { object-position: 50% 30%; }
 .pos-termite { object-position: 72% 50%; }
 .crop { position: relative; z-index: 0; width: 100%; height: 100%; overflow: hidden; }
-.pos-mouse { object-fit: cover; object-position: 60% 60%; transform: scale(2); transform-origin: 60% 60%; }
+.plate-frame--specimen.plate-frame--wide { aspect-ratio: 4 / 3; }
+/* Fig. 6: tight on the mouse on the plate and the standing mouse, jar and cheese mostly cropped out */
+.pos-mouse { object-fit: cover; object-position: 50% 70%; transform: scale(3.3); transform-origin: 42.5% 70%; }
 .pos-gerlier { object-position: 50% 60%; }
 
 .plate-drawn { display: grid; place-items: center; color: #5a3a22; }
