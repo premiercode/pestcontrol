@@ -296,7 +296,9 @@ html body > div.page.page { padding-bottom: 0; }
 .extra-price { margin-top: 0.35rem; font-family: var(--font-head); font-weight: 800; font-size: 1.6rem; display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap; }
 .extra-price .price-from { font-family: var(--font-body); }
 @media (min-width: 52em) {
-  .plan-grid { grid-template-columns: repeat(3, 1fr); }
+  .plan-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: auto 1fr auto; row-gap: 0; }
+  /* Subgrid: header, feature list and button rows line up across all three cards */
+  .plan { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
   .extras { grid-template-columns: 1fr 1fr; align-items: center; gap: var(--space-8); padding: var(--space-6) var(--space-8); }
   .extra + .extra { border-left: 2px dotted var(--sand-300); padding-left: var(--space-8); }
 }
@@ -547,4 +549,8 @@ html body > div.page.page { padding-bottom: 0; }
 @media print {
   .site-header { position: static; }
   .preview-bar { background: none; color: #000; }
+}
+@media (min-width: 52em) {
+  .plan-top { display: flex; flex-direction: column; }
+  .plan-top .price { margin-top: auto; padding-top: var(--space-4); }
 }

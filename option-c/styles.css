@@ -295,7 +295,7 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
 .plate-frame--photo { background: #e6d3b0; }
 .plate-frame--photo img {
   object-fit: cover;
-  filter: grayscale(1) sepia(.45) contrast(1.04) brightness(1.12);
+  filter: grayscale(1) sepia(.45) contrast(.94) brightness(.97);
   mix-blend-mode: multiply;
 }
 .plate-frame--photo::before {   /* warm ink wash over the photo, like a toned printed plate */
@@ -446,7 +446,7 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
 
 .hero-plate .plate-frame { aspect-ratio: 4 / 3; }
 /* Plate I: 4:3, house fills the frame, roofline in the upper third, less lawn */
-.hero-plate .crop img { object-fit: cover; transform: scale(1.45); transform-origin: 50% 71%; }
+.hero-plate .crop img { object-fit: cover; transform: scale(1.25); transform-origin: 50% 70%; }
 
 @media (min-width: 1024px) {
   .hero { padding-block: clamp(2rem, 1rem + 2vw, 3.5rem) clamp(3rem, 2rem + 2vw, 4.5rem); }
@@ -543,7 +543,9 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
 .pos-scorp { object-position: 50% 30%; }
 .pos-termite { object-position: 72% 50%; }
 .crop { position: relative; z-index: 0; width: 100%; height: 100%; overflow: hidden; }
-.plate-frame--specimen.plate-frame--wide { aspect-ratio: 4 / 3; }
+/* Fig. 6 keeps the same outer plate as its neighbours; the tight 4:3 crop sits centred on the plate's paper, like a small figure on a page */
+.plate-frame--wide { display: grid; align-items: center; }
+.plate-frame--wide .crop { height: auto; aspect-ratio: 4 / 3; }
 /* Fig. 6: tight on the mouse on the plate and the standing mouse, jar and cheese mostly cropped out */
 .pos-mouse { object-fit: cover; object-position: 50% 70%; transform: scale(3.3); transform-origin: 42.5% 70%; }
 .pos-gerlier { object-position: 50% 60%; }
@@ -778,10 +780,13 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
   .process-plate { grid-column: 2; }
 }
 @media (min-width: 1280px) {
-  .process-grid { grid-template-columns: var(--margin-col) minmax(0, 1.7fr) minmax(0, 1fr); align-items: start; }
-  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .process-plate { grid-column: 3; grid-row: 1; }
+  /* Four steps in a row across the main column; Plate IV moves into the margin */
+  .process-grid { align-items: start; }
+  .process-plate { grid-column: 1; grid-row: 1; }
   .process-plate .plate-frame { aspect-ratio: 4 / 5; }
+  .steps { grid-column: 2; grid-row: 1; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--s-8); }
+  .step { grid-template-columns: 1fr; border-bottom: 1px solid var(--rule); padding-top: var(--s-5); }
+  .step-icon { grid-row: auto; margin-bottom: var(--s-3); }
 }
 
 .footnotes {
@@ -904,6 +909,11 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
 .gz-dots { flex: 1; border-bottom: 1px dotted var(--rule-strong); transform: translateY(-.3em); }
 .gz-note { font-family: var(--font-text); font-weight: 400; font-style: italic; font-size: var(--text-sm); color: var(--ink-muted); }
 .area-call { margin-top: var(--s-8); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-3); color: var(--ink-soft); }
+.next-steps { margin-top: var(--s-10); padding-top: var(--s-5); border-top: 2px solid var(--ink); }
+.next-steps-title { display: flex; align-items: center; gap: var(--s-3); font-family: var(--font-label); letter-spacing: .06em; color: var(--madder); font-size: var(--text-base); }
+.next-steps ol { list-style: none; margin-top: var(--s-4); display: grid; gap: var(--s-4); }
+.next-steps li { display: grid; grid-template-columns: 2rem 1fr; color: var(--ink-soft); font-size: var(--text-sm); line-height: 1.55; }
+.next-steps .note-num { font-family: var(--font-display); font-style: italic; font-weight: 600; color: var(--madder); font-size: var(--text-lg); line-height: 1.3; }
 .area-call a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; font-size: var(--text-lg); }
 
 .form-card {
