@@ -965,9 +965,9 @@ body > .preview-bar.preview-bar { padding-block: .45rem; }
 }
 .field input:hover, .field select:hover { border-color: var(--ink-muted); }
 .field input:focus-visible, .field select:focus-visible {
-  outline: none;
+  outline: 2px solid var(--madder);
+  outline-offset: 2px;
   border-color: var(--madder);
-  box-shadow: 0 0 0 3px rgba(124, 45, 24, .2);
 }
 
 .field-set { margin: 0; padding: 0; border: 0; min-width: 0; }
@@ -1033,6 +1033,7 @@ body > footer.site-footer.site-footer {
 }
 .site-footer a { color: #f3e3c4; }
 .site-footer a:hover { color: #fff; }
+.site-footer :focus-visible { outline-color: #f0c9b4; }
 .site-footer .sample-tag { color: #f0c9b4; border-color: #d9a68c; background: transparent; }
 .footer-grid { display: grid; gap: var(--s-8); }
 .footer-grid p + p { margin-top: var(--s-2); }
@@ -1093,3 +1094,41 @@ body > footer.site-footer.site-footer {
   .site-header, .preview-bar { position: static; }
   body { background: #fff; }
 }
+
+/* a11y: footer and next-steps labels are real headings; keep their original look */
+h2.footer-head, h3.next-steps-title { font-weight: 400; line-height: inherit; margin-top: 0; }
+
+/* a11y fix: compact contents menu below 1080px (works without JS) */
+.nav-menu { position: relative; margin-left: auto; }
+.nav-menu summary {
+  list-style: none; cursor: pointer; display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 0.85rem;
+  border: 1px solid var(--rule-strong); color: var(--ink); font-family: var(--font-label); letter-spacing: .06em; font-size: var(--text-sm);
+}
+.nav-menu summary::-webkit-details-marker { display: none; }
+.nav-menu[open] summary { border-color: var(--madder); color: var(--madder); }
+.nav-menu ul {
+  position: absolute; left: 0; top: calc(100% + 0.5rem); min-width: 12rem; z-index: 60; list-style: none; margin: 0;
+  display: grid; padding: 0.35rem; background: var(--paper-light); border: 1px solid var(--rule-strong);
+  box-shadow: 0 14px 30px -12px rgba(42, 33, 25, .45);
+}
+.nav-menu a { display: flex; align-items: center; min-height: 2.75rem; padding: 0 0.8rem; text-decoration: none; color: var(--ink); }
+.nav-menu a:hover { background: var(--paper-deep); color: var(--madder); }
+@media (min-width: 1080px) { .nav-menu { display: none; } }
+@media (max-width: 339px) {
+  .header-inner { flex-wrap: wrap; row-gap: 0.5rem; padding-block: 0.5rem; }
+  .nav-menu { order: 3; margin-left: 0; }
+  .header-actions { order: 3; margin-left: auto; }
+  html { scroll-padding-top: 9rem; }
+}
+
+/* phones: icon-only menu button; hero already shows a call link, so drop the header phone */
+.nav-menu summary { gap: 0.45rem; }
+@media (max-width: 479px) {
+  .nav-menu summary { width: 2.75rem; min-width: 2.75rem; padding: 0; justify-content: center; }
+  .nav-menu-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .header-phone-icon { display: none; }
+}
+@media (min-width: 480px) { .nav-menu-ico { display: none; } }
+
+/* keep the phone header on one row at 360-479px */
+@media (max-width: 479px) { .site-header .wordmark * { white-space: nowrap; } .site-header .btn { white-space: nowrap; } .header-inner { gap: 0.6rem; } }

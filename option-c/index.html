@@ -37,6 +37,15 @@
           <li><a href="#area">Service area</a></li>
         </ul>
       </nav>
+      <details class="nav-menu">
+        <summary><svg class="nav-menu-ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="nav-menu-label">Contents</span></summary>
+        <ul>
+          <li><a href="#pests">Pests</a></li>
+          <li><a href="#plans">Plans</a></li>
+          <li><a href="#wdi">WDI reports</a></li>
+          <li><a href="#area">Service area</a></li>
+        </ul>
+      </details>
       <div class="header-actions">
         <!-- PLACEHOLDER: real phone number at launch -->
         <a class="header-phone" href="tel:+19405550187"><span class="header-phone-label">Call <span class="sample-inline">(sample)</span></span> <span class="header-phone-num">(940) 555-0187</span></a>
@@ -907,7 +916,7 @@
           </ol>
           <!-- PLACEHOLDER: confirm the after-booking process with the client -->
           <div class="next-steps">
-            <p class="next-steps-title">What happens next <span class="sample-tag">Sample</span></p>
+            <h3 class="next-steps-title">What happens next <span class="sample-tag">Sample</span></h3>
             <ol>
               <li><span class="note-num" aria-hidden="true">i.</span><span>We inspect first and find the entry points and moisture that draw pests in.</span></li>
               <li><span class="note-num" aria-hidden="true">ii.</span><span>We treat only where needed. Before any termite treatment you get a written estimate with the warranty details.</span></li>
@@ -933,11 +942,11 @@
 
             <div class="field-row">
               <div class="field">
-                <label for="f-name">Name</label>
+                <label for="f-name">Name <span class="legend-hint">(required)</span></label>
                 <input id="f-name" name="name" type="text" autocomplete="name" required>
               </div>
               <div class="field">
-                <label for="f-phone">Phone</label>
+                <label for="f-phone">Phone <span class="legend-hint">(required)</span></label>
                 <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
               </div>
             </div>
@@ -1014,13 +1023,13 @@
         <p>Licensed by the Texas Department of Agriculture (sample)</p>
       </div>
       <div class="footer-contact">
-        <p class="footer-head">Contact</p>
+        <h2 class="footer-head">Contact</h2>
         <!-- PLACEHOLDER: real phone and email at launch -->
         <p><a href="tel:+19405550187">(940) 555-0187</a> <span class="sample-tag">Sample</span></p>
         <p><a href="mailto:hello@example.com">hello@example.com</a> <span class="sample-tag">Sample</span></p>
       </div>
       <div class="footer-area">
-        <p class="footer-head">Service area</p>
+        <h2 class="footer-head">Service area</h2>
         <p>Denton, Corinth, Argyle, Flower Mound, Lewisville, Aubrey and Sanger.</p>
       </div>
       <div class="footer-fine">

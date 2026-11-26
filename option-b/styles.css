@@ -58,6 +58,7 @@
 html {
   font-size: clamp(100%, 0.55vw + 0.5rem, 137.5%);
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
   -webkit-text-size-adjust: 100%;
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -361,7 +362,7 @@ html body > div.page.page { padding-bottom: 0; }
 }
 .guarantee-card::before {
   content: ""; position: absolute; right: -8rem; bottom: -14rem; width: 30rem; height: 30rem; border-radius: 50%;
-  background: rgb(255 255 255 / .08); pointer-events: none;
+  background: rgb(0 0 0 / .06); pointer-events: none;
 }
 .guarantee-head { display: grid; gap: var(--space-6); align-items: center; position: relative; }
 .guarantee-art { width: clamp(7.5rem, 6rem + 6vw, 11rem); }
@@ -369,11 +370,11 @@ html body > div.page.page { padding-bottom: 0; }
 .guarantee h2 { font-size: clamp(2.2rem, 1.6rem + 2.4vw, 3.6rem); max-width: 16ch; font-weight: 800; }
 .guarantee-lede { font-size: var(--text-lg); margin-top: var(--space-3); font-weight: 500; }
 .g-steps { display: grid; gap: var(--space-4); margin-top: var(--space-8); position: relative; }
-.g-steps li { display: flex; gap: var(--space-4); align-items: flex-start; background: rgb(255 255 255 / .1); border: 1px solid rgb(255 255 255 / .22); border-radius: var(--radius-lg); padding: var(--space-5); }
+.g-steps li { display: flex; gap: var(--space-4); align-items: flex-start; background: rgb(0 0 0 / .12); border: 1px solid rgb(255 255 255 / .22); border-radius: var(--radius-lg); padding: var(--space-5); }
 .g-num { flex: none; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: #fff; color: var(--accent-700); font-family: var(--font-head); font-weight: 800; }
 .g-steps strong { display: block; font-size: 1.05rem; margin-bottom: 0.15rem; }
 .g-steps p { color: #fff; }
-.g-fine { position: relative; margin-top: var(--space-5); font-size: 0.88rem; color: #fff; opacity: .95; }
+.g-fine { position: relative; margin-top: var(--space-5); font-size: 0.88rem; color: #fff; }
 @media (min-width: 48em) {
   .guarantee-head { grid-template-columns: auto 1fr; gap: var(--space-10); }
   .g-steps { grid-template-columns: repeat(3, 1fr); }
@@ -424,11 +425,11 @@ html body > div.page.page { padding-bottom: 0; }
 .field input, .field select {
   width: 100%; min-height: 3rem; padding: 0.65rem 0.9rem;
   font: inherit; color: var(--ink); background: var(--sand-50);
-  border: 1.5px solid #cfc3b5; border-radius: var(--radius-md);
+  border: 1.5px solid #8d8173; border-radius: var(--radius-md);
   transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
 }
-.field input:hover, .field select:hover { border-color: #a99a89; }
-.field input:focus-visible, .field select:focus-visible { outline: none; border-color: var(--focus); background: #fff; box-shadow: 0 0 0 4px rgb(47 111 214 / .18); }
+.field input:hover, .field select:hover { border-color: #6f6458; }
+.field input:focus-visible, .field select:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-color: var(--focus); background: #fff; }
 .select-wrap { position: relative; }
 .select-wrap::after { content: ""; position: absolute; right: 1rem; top: 50%; width: 0.55rem; height: 0.55rem; border-right: 2.5px solid var(--ink); border-bottom: 2.5px solid var(--ink); transform: translateY(-70%) rotate(45deg); pointer-events: none; }
 .field select { appearance: none; padding-right: 2.5rem; }
@@ -439,7 +440,7 @@ html body > div.page.page { padding-bottom: 0; }
 .check input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
 .check span {
   display: flex; align-items: center; gap: 0.55rem; min-height: 2.9rem; padding: 0.5rem 0.8rem;
-  border: 1.5px solid #cfc3b5; border-radius: var(--radius-md); background: var(--sand-50);
+  border: 1.5px solid #8d8173; border-radius: var(--radius-md); background: var(--sand-50);
   font-weight: 600; font-size: 0.95rem; line-height: 1.2;
   transition: border-color 150ms ease, background-color 150ms ease;
 }
@@ -456,7 +457,7 @@ html body > div.page.page { padding-bottom: 0; }
 .hp-wrap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .form-note { text-align: center; font-weight: 600; color: var(--ink-soft); margin-top: -0.5rem; }
 .form-recaptcha { text-align: center; font-size: 0.8rem; color: var(--ink-faint); margin-top: -0.75rem; }
-.form-status:empty { display: none; }
+.form-status:empty { padding: 0; border: 0; }
 .form-status { text-align: center; font-weight: 700; background: var(--accent-50); border: 1px solid var(--accent-100); border-radius: var(--radius-md); padding: 0.8rem 1rem; }
 @media (max-width: 24.99em) { .check-grid { grid-template-columns: 1fr; } }
 @media (min-width: 36em) {
@@ -475,6 +476,7 @@ html body > div.page.page { padding-bottom: 0; }
 .footer-grid .footer-head { font-weight: 700; color: var(--accent-300); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.78rem; margin: 0 0 0.6rem; }
 .site-footer a { color: #fff; text-underline-offset: 3px; }
 .site-footer a:hover { color: var(--accent-300); }
+.site-footer :focus-visible { outline-color: #fff; }
 .footer-links { list-style: none; display: grid; gap: 0.1rem; }
 .footer-links a, .footer-grid > div > p a { display: inline-flex; align-items: center; min-height: 2.75rem; }
 .footer-base { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; justify-content: space-between; margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid rgb(255 255 255 / .15); color: #bfc2d0; }
@@ -509,7 +511,7 @@ html body > div.page.page { padding-bottom: 0; }
   .hero .eyebrow { margin-bottom: 0.75rem; }
   .hero-lede { font-size: 1.05rem; line-height: 1.55; margin-top: 1rem; }
   .hero-actions { margin-top: 1.5rem; }
-  .hero-actions .btn-quiet { display: none; }
+  .hero-actions { display: grid; gap: 0.6rem; justify-items: start; }
   /* Trust points sit under the art so the switcher corner only overlaps the illustration.
      Visual order only; the list has nothing focusable, so focus order is unchanged. */
   .hero-grid { gap: 0; }
@@ -554,3 +556,33 @@ html body > div.page.page { padding-bottom: 0; }
   .plan-top { display: flex; flex-direction: column; }
   .plan-top .price { margin-top: auto; padding-top: var(--space-4); }
 }
+
+/* a11y fixes: required marker, compact menu below 72em */
+.req { font-weight: 500; color: var(--ink-soft); }
+.nav-menu { position: relative; }
+.nav-menu summary {
+  list-style: none; cursor: pointer; display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 0.95rem;
+  border-radius: var(--radius-full); background: var(--sand-100); color: var(--ink); font-weight: 700; font-size: 0.95rem;
+}
+.nav-menu summary::-webkit-details-marker { display: none; }
+.nav-menu ul {
+  position: absolute; right: 0; top: calc(100% + 0.5rem); min-width: 12.5rem; z-index: 60; list-style: none;
+  display: grid; padding: 0.4rem; border-radius: var(--radius-lg); background: #fff; border: 1px solid #8d8173;
+  box-shadow: 0 18px 40px -12px rgb(42 47 69 / .35);
+}
+.nav-menu a { display: flex; align-items: center; min-height: 2.75rem; padding: 0 0.85rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; color: var(--ink); }
+.nav-menu a:hover { background: var(--accent-50); }
+@media (min-width: 72em) { .nav-menu { display: none; } }
+@media (max-width: 21.2em) { .header-inner { flex-wrap: wrap; justify-content: center; } .wordmark { margin-right: 0; } }
+
+/* phones: icon-only menu button; hero already shows a call link, so drop the header phone */
+.nav-menu summary { gap: 0.45rem; }
+@media (max-width: 479px) {
+  .nav-menu summary { width: 2.75rem; min-width: 2.75rem; padding: 0; justify-content: center; }
+  .nav-menu-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .header-phone { display: none; }
+}
+@media (min-width: 480px) { .nav-menu-ico { display: none; } }
+
+/* keep the phone header on one row at 360-479px */
+@media (max-width: 479px) { .site-header .wordmark * { white-space: nowrap; } .site-header .btn { white-space: nowrap; } .header-inner { gap: 0.6rem; } }
