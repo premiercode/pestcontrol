@@ -1,7 +1,7 @@
 <!--
-  PITCH NOTE (Option B, "Friendly neighborhood"): a bright, sunny homepage where hand-drawn pest
-  illustrations replace scary bug photos, so a family can identify the problem without flinching.
-  Look first at the "Identify your pest" cards, then the plain Sample prices right below them.
+  PITCH NOTE (Option B, "Friendly neighborhood"): an all-illustrated homepage (house scene, pest
+  drawings, a simple area map) in one warm orange and sand palette, so families can find their pest without flinching at bug photos.
+  Look first at the "Identify your pest" cards, then the plan cards with Sample prices right below them.
 -->
 <!doctype html>
 <html lang="en">
@@ -15,7 +15,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:ital,wght@0,400..700;1,400&display=swap">
   <link rel="stylesheet" href="styles.css">
-  <link rel="preload" as="image" href="../assets/img/home-brick-ranch-02-1280.webp" imagesrcset="../assets/img/home-brick-ranch-02-640.webp 640w, ../assets/img/home-brick-ranch-02-1280.webp 1280w, ../assets/img/home-brick-ranch-02-1920.webp 1920w" imagesizes="(min-width: 960px) 44vw, 92vw">
   <script src="main.js" defer></script>
 </head>
 <body>
@@ -68,35 +67,58 @@
             <a class="btn btn-quiet btn-lg" href="tel:+19405550187">Call (940) 555-0187 <span class="tag-sample">Sample</span></a>
           </div>
           <!-- PLACEHOLDER: confirm trust points with the client -->
-          <ul class="trust" aria-label="What every plan includes (sample)">
+          <ul class="trust" aria-label="Trust points (sample)">
             <li><span class="trust-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Licensed applicators</li>
-            <li><span class="trust-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Free re-service between scheduled visits</li>
             <li><span class="trust-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>No long-term contracts</li>
-            <li class="trust-sample"><span class="tag-sample">Sample</span></li>
+            <li><span class="tag-sample">Sample</span></li>
           </ul>
         </div>
 
         <div class="hero-art">
-          <svg class="hero-sun" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-            <g stroke="#f5a623" stroke-width="7" stroke-linecap="round">
-              <path d="M100 8v20M100 172v20M8 100h20M172 100h20M35 35l14 14M151 151l14 14M35 165l14-14M151 49l14-14"/>
-            </g>
-            <circle cx="100" cy="100" r="54" fill="#ffc94a"/>
-            <circle cx="84" cy="84" r="16" fill="#fff" opacity=".35"/>
-          </svg>
-          <svg class="hero-cloud hero-cloud--a" viewBox="0 0 120 56" aria-hidden="true" focusable="false"><path d="M22 52h76a20 20 0 0 0 0-40 26 26 0 0 0-48-4 18 18 0 0 0-28 16 12 12 0 0 0 0 28Z" fill="#fff"/></svg>
-          <svg class="hero-cloud hero-cloud--b" viewBox="0 0 120 56" aria-hidden="true" focusable="false"><path d="M22 52h76a20 20 0 0 0 0-40 26 26 0 0 0-48-4 18 18 0 0 0-28 16 12 12 0 0 0 0 28Z" fill="#fff"/></svg>
-          <figure class="hero-frame">
-            <img src="../assets/img/home-brick-ranch-02-1280.webp"
-                 srcset="../assets/img/home-brick-ranch-02-640.webp 640w, ../assets/img/home-brick-ranch-02-1280.webp 1280w, ../assets/img/home-brick-ranch-02-1920.webp 1920w, ../assets/img/home-brick-ranch-02-2400.webp 2400w"
-                 sizes="(min-width: 960px) 44vw, 92vw"
-                 width="1280" height="848"
-                 alt="Single-story brick home with trimmed shrubs and a green lawn"
-                 fetchpriority="high">
-          </figure>
-          <div class="hero-sticker">
-            <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M10 22 24 10l14 12v16H10Z" fill="#fff" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M20 38v-9h8v9" fill="#ffc94a" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M38 14a18 18 0 0 1 3 13" fill="none" stroke="#c4431f" stroke-width="3.5" stroke-linecap="round"/><path d="m37 9 1.5 6 5-3" fill="none" stroke="#c4431f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <p><span class="sticker-line">If pests come back,</span> <span class="sticker-line">so do we.</span> <span class="tag-sample">Sample</span></p>
+          <div class="hero-frame">
+            <svg class="scene" viewBox="0 0 600 560" role="img" aria-labelledby="scene-title">
+              <title id="scene-title">Illustration of a single-story home with a front yard, a shade tree and a sunny sky</title>
+              <defs>
+                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe2d3"/><stop offset="1" stop-color="#fff8f1"/></linearGradient>
+              </defs>
+              <rect width="600" height="560" fill="url(#sky)"/>
+              <g class="scene-sun">
+                <g stroke="#f08a52" stroke-width="8" stroke-linecap="round"><path d="M455 34v18M455 188v18M369 120h18M523 120h18M394 59l13 13M503 168l13 13M394 181l13-13M503 72l13-13"/></g>
+                <circle cx="455" cy="120" r="54" fill="#f59a5b"/>
+                <circle cx="438" cy="103" r="15" fill="#fff" opacity=".35"/>
+              </g>
+              <path class="scene-cloud" d="M80 156h116a27 27 0 0 0 0-54 35 35 0 0 0-64-6 25 25 0 0 0-40 21 19 19 0 0 0-12 39Z" fill="#fff"/>
+              <path class="scene-cloud scene-cloud--b" d="M316 96h72a17 17 0 0 0 0-34 23 23 0 0 0-42-4 15 15 0 0 0-24 13 12 12 0 0 0-6 25Z" fill="#fff" opacity=".9"/>
+              <path d="M0 352c90-48 180-56 270-28s190 18 330-28v264H0Z" fill="#f3d9c4"/>
+              <path d="M0 398c120-30 250-34 380-14s160 10 220 0v176H0Z" fill="#e2e3c4"/>
+              <path d="M268 410h52l44 150H216Z" fill="#f7e8d8"/>
+              <g stroke="#2a2f45" stroke-width="5" stroke-linejoin="round">
+                <rect x="70" y="262" width="18" height="140" rx="8" fill="#a8744d"/>
+                <circle cx="79" cy="232" r="62" fill="#c3cd98"/>
+              </g>
+              <circle cx="57" cy="212" r="14" fill="#fff" opacity=".28"/>
+              <circle cx="104" cy="250" r="7" fill="#f59a5b"/><circle cx="62" cy="262" r="6" fill="#f59a5b"/><circle cx="92" cy="206" r="6" fill="#f59a5b"/>
+              <g stroke="#2a2f45" stroke-width="4"><path d="M470 382h130M470 402h130"/></g>
+              <g fill="#fff" stroke="#2a2f45" stroke-width="4" stroke-linejoin="round">
+                <path d="M478 414v-48l10-10 10 10v48Z"/><path d="M510 416v-48l10-10 10 10v48Z"/><path d="M542 418v-48l10-10 10 10v48Z"/><path d="M574 420v-48l10-10 10 10v48Z"/>
+              </g>
+              <rect x="358" y="168" width="30" height="64" fill="#ecd1bb" stroke="#2a2f45" stroke-width="5"/>
+              <rect x="150" y="262" width="300" height="142" rx="6" fill="#fff8f0" stroke="#2a2f45" stroke-width="5"/>
+              <path d="M128 272 300 160l172 112Z" fill="#c4431f" stroke="#2a2f45" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M196 236h208M246 204h108" stroke="#a3361a" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="300" cy="226" r="15" fill="#fdeee8" stroke="#2a2f45" stroke-width="5"/>
+              <path d="M275 404v-66a25 25 0 0 1 50 0v66Z" fill="#f1a27f" stroke="#2a2f45" stroke-width="5" stroke-linejoin="round"/>
+              <circle cx="314" cy="364" r="3.5" fill="#2a2f45"/>
+              <g fill="#fdeee8" stroke="#2a2f45" stroke-width="5"><rect x="178" y="296" width="66" height="56" rx="4"/><rect x="356" y="296" width="66" height="56" rx="4"/></g>
+              <path d="M211 296v56M178 324h66M389 296v56M356 324h66" stroke="#2a2f45" stroke-width="4"/>
+              <rect x="260" y="402" width="80" height="12" rx="3" fill="#ecd1bb" stroke="#2a2f45" stroke-width="4"/>
+              <g fill="#aebd84" stroke="#2a2f45" stroke-width="5" stroke-linejoin="round">
+                <path d="M146 404c-10-36 30-48 46-27 14-19 52-9 44 27Z"/>
+                <path d="M364 404c-8-36 30-46 46-25 14-19 52-7 44 25Z"/>
+              </g>
+              <g fill="#f59a5b"><circle cx="172" cy="388" r="5"/><circle cx="212" cy="392" r="5"/><circle cx="192" cy="376" r="4"/><circle cx="390" cy="388" r="5"/><circle cx="428" cy="392" r="5"/><circle cx="410" cy="376" r="4"/></g>
+              <path d="M54 476q6-14 12 0q6-14 12 0M476 496q6-14 12 0q6-14 12 0M146 528q6-14 12 0q6-14 12 0M420 448q6-12 10 0q6-12 10 0" fill="none" stroke="#a3ad78" stroke-width="4" stroke-linecap="round"/>
+            </svg>
           </div>
         </div>
       </div>
@@ -113,7 +135,7 @@
         </div>
 
         <ul class="pest-grid" role="list">
-          <li class="pest-card" style="--tint:#ffe9e2; --ring:#f7b9a6" data-reveal>
+          <li class="pest-card" data-reveal>
             <div class="pest-ico-wrap">
               <svg class="pest-ico" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
                 <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
@@ -135,7 +157,7 @@
             <a class="pest-link" href="#inspect" data-pest="fire-ants">Get fire ants checked <span aria-hidden="true">&rarr;</span></a>
           </li>
 
-          <li class="pest-card" style="--tint:#fff1cc; --ring:#f1d27e" data-reveal>
+          <li class="pest-card" data-reveal>
             <div class="pest-ico-wrap">
               <svg class="pest-ico" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
                 <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
@@ -162,10 +184,10 @@
             <a class="pest-link" href="#inspect" data-pest="scorpions">Get scorpions checked <span aria-hidden="true">&rarr;</span></a>
           </li>
 
-          <li class="pest-card" style="--tint:#f1ebff; --ring:#cdbdf2" data-reveal>
+          <li class="pest-card" data-reveal>
             <div class="pest-ico-wrap">
               <svg class="pest-ico" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-                <g stroke="currentColor" stroke-width="3" fill="#e6f1ff" fill-opacity=".92">
+                <g stroke="currentColor" stroke-width="3" fill="#ffffff" fill-opacity=".95">
                   <ellipse cx="40" cy="73" rx="8" ry="28" transform="rotate(32 40 73)"/>
                   <ellipse cx="80" cy="73" rx="8" ry="28" transform="rotate(-32 80 73)"/>
                   <ellipse cx="47" cy="78" rx="8.5" ry="30" transform="rotate(18 47 78)"/>
@@ -187,7 +209,7 @@
             <a class="pest-link" href="#inspect" data-pest="termites">Get termites checked <span aria-hidden="true">&rarr;</span></a>
           </li>
 
-          <li class="pest-card" style="--tint:#e3f1ff; --ring:#a9cdf3" data-reveal>
+          <li class="pest-card" data-reveal>
             <div class="pest-ico-wrap">
               <svg class="pest-ico" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
                 <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -213,7 +235,7 @@
             <a class="pest-link" href="#inspect" data-pest="mosquitoes">Get mosquitoes checked <span aria-hidden="true">&rarr;</span></a>
           </li>
 
-          <li class="pest-card" style="--tint:#ffecd9; --ring:#f2c08d" data-reveal>
+          <li class="pest-card" data-reveal>
             <div class="pest-ico-wrap">
               <svg class="pest-ico" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
                 <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
@@ -236,13 +258,13 @@
             <a class="pest-link" href="#inspect" data-pest="cockroaches">Get cockroaches checked <span aria-hidden="true">&rarr;</span></a>
           </li>
 
-          <li class="pest-card" style="--tint:#e4f5ea; --ring:#a8dbb9" data-reveal>
+          <li class="pest-card" data-reveal>
             <div class="pest-ico-wrap">
               <svg class="pest-ico" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
                 <path d="M90 86q14 3 10 11t4 8" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-                <circle cx="46" cy="48" r="12" fill="#b8c2d4" stroke="currentColor" stroke-width="3.5"/>
+                <circle cx="46" cy="48" r="12" fill="#cfc6bd" stroke="currentColor" stroke-width="3.5"/>
                 <circle cx="46" cy="48" r="6" fill="#f6b6b0"/>
-                <path d="M16 75c6-12 18-20 34-20 22-4 44 6 44 26 0 11-10 15-24 15H42c-12 0-22-10-26-21Z" fill="#b8c2d4" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M16 75c6-12 18-20 34-20 22-4 44 6 44 26 0 11-10 15-24 15H42c-12 0-22-10-26-21Z" fill="#cfc6bd" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/>
                 <path d="M48 96v3M76 96v3" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
                 <circle cx="30" cy="80" r="3.6" fill="#f6b6b0"/>
                 <path d="M22 79l-12 4M22 75 8 73" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
@@ -256,7 +278,7 @@
             <a class="pest-link" href="#inspect" data-pest="rodents">Get rodents checked <span aria-hidden="true">&rarr;</span></a>
           </li>
 
-          <li class="pest-card" style="--tint:#ffe6ec; --ring:#f2adbd" data-reveal>
+          <li class="pest-card" data-reveal>
             <div class="pest-ico-wrap">
               <svg class="pest-ico" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
                 <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
@@ -278,7 +300,7 @@
             <a class="pest-link" href="#inspect" data-pest="bed-bugs">Get bed bugs checked <span aria-hidden="true">&rarr;</span></a>
           </li>
 
-          <li class="pest-card" style="--tint:#f6eee3; --ring:#dcc3a1" data-reveal>
+          <li class="pest-card" data-reveal>
             <div class="pest-ico-wrap">
               <svg class="pest-ico" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
                 <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
@@ -310,40 +332,54 @@
           <p class="section-lede">Start with quarterly service, then add termite and mosquito protection if you need them. No long-term contracts. <span class="tag-sample">Sample</span></p>
         </div>
 
-        <!-- PLACEHOLDER: all plan prices, inclusions and the no-contract line must be confirmed by the client -->
+        <!-- PLACEHOLDER: all plan prices, inclusions, the "Recommended" mark and the no-contract line must be confirmed by the client -->
         <ul class="plan-grid" role="list">
-          <li class="plan" style="--band:#cfe5ff" data-reveal>
+          <li class="plan" data-reveal>
             <div class="plan-top">
               <h3>Essential</h3>
+              <p class="plan-sum">Quarterly general pest service</p>
               <p class="price"><span class="price-from">from</span> <span class="price-num">$39</span><span class="price-per">/mo</span> <span class="tag-sample">Sample</span></p>
             </div>
             <ul class="plan-list">
-              <li>Quarterly general pest service</li>
-              <li>Exterior perimeter, eaves and entry points</li>
-              <li>Interior when needed</li>
-              <li>Free re-service between visits</li>
+              <li class="yes">Quarterly general pest service</li>
+              <li class="yes">Exterior perimeter, eaves and entry points</li>
+              <li class="yes">Interior when needed</li>
+              <li class="yes">Free re-service between visits</li>
+              <li class="no"><span class="visually-hidden">Not included: </span>Termite protection</li>
+              <li class="no"><span class="visually-hidden">Not included: </span>Seasonal mosquito treatments</li>
             </ul>
+            <a class="btn btn-outline plan-cta" href="#inspect">Ask about Essential</a>
           </li>
-          <li class="plan" style="--band:#ffd978" data-reveal>
+          <li class="plan plan--rec" data-reveal>
             <div class="plan-top">
+              <p class="plan-flag">Recommended <span class="tag-sample tag-sample--on-accent">Sample</span></p>
               <h3>Plus</h3>
-              <p class="price"><span class="price-from">from</span> <span class="price-num">$69</span><span class="price-per">/mo</span> <span class="tag-sample">Sample</span></p>
+              <p class="plan-sum">Adds termite protection</p>
+              <p class="price"><span class="price-from">from</span> <span class="price-num">$69</span><span class="price-per">/mo</span> <span class="tag-sample tag-sample--on-accent">Sample</span></p>
             </div>
             <ul class="plan-list">
-              <li>Everything in Essential</li>
-              <li>Termite protection</li>
-              <li>Warranty terms in writing</li>
+              <li class="yes">Everything in Essential</li>
+              <li class="yes">Termite protection</li>
+              <li class="yes">Warranty terms in writing</li>
+              <li class="yes">Free re-service between visits</li>
+              <li class="no"><span class="visually-hidden">Not included: </span>Seasonal mosquito treatments</li>
             </ul>
+            <a class="btn btn-primary plan-cta" href="#inspect">Ask about Plus</a>
           </li>
-          <li class="plan" style="--band:#ffc3b0" data-reveal>
+          <li class="plan" data-reveal>
             <div class="plan-top">
               <h3>Complete</h3>
+              <p class="plan-sum">Adds seasonal mosquito treatments</p>
               <p class="price"><span class="price-from">from</span> <span class="price-num">$119</span><span class="price-per">/mo</span> <span class="tag-sample">Sample</span></p>
             </div>
             <ul class="plan-list">
-              <li>Everything in Plus</li>
-              <li>Seasonal mosquito treatments</li>
+              <li class="yes">Quarterly general pest service</li>
+              <li class="yes">Exterior perimeter, eaves and entry points</li>
+              <li class="yes">Termite protection, warranty terms in writing</li>
+              <li class="yes">Seasonal mosquito treatments</li>
+              <li class="yes">Free re-service between visits</li>
             </ul>
+            <a class="btn btn-outline plan-cta" href="#inspect">Ask about Complete</a>
           </li>
         </ul>
 
@@ -359,7 +395,6 @@
             <p class="extra-desc">Official Texas WDI report for a home sale</p>
             <p class="extra-price"><span class="price-from">from</span> $150 <span class="tag-sample">Sample</span></p>
           </div>
-          <a class="btn btn-primary extras-cta" href="#inspect">Get a free pest inspection</a>
         </div>
       </div>
     </section>
@@ -368,7 +403,7 @@
     <section class="section wdi" id="real-estate" aria-labelledby="wdi-title">
       <div class="wrap wdi-grid">
         <div class="wdi-copy">
-          <p class="eyebrow eyebrow--sun">Termites and real estate</p>
+          <p class="eyebrow">Termites and real estate</p>
           <h2 id="wdi-title">WDI inspections for buyers, sellers and agents</h2>
           <ul class="chips" aria-label="Who it's for">
             <li>Home buyers</li><li>Home sellers</li><li>Real estate agents</li>
@@ -386,19 +421,44 @@
         </div>
 
         <div class="wdi-side">
-          <figure class="wdi-photo">
-            <img src="../assets/img/realestate-keys-01-1280.webp"
-                 srcset="../assets/img/realestate-keys-01-640.webp 640w, ../assets/img/realestate-keys-01-1280.webp 1280w, ../assets/img/realestate-keys-01-1920.webp 1920w"
-                 sizes="(min-width: 960px) 38vw, 92vw"
-                 width="1280" height="854" loading="lazy"
-                 alt="Hand holding a house key over small model homes">
-          </figure>
+          <div class="wdi-art">
+            <svg viewBox="0 0 520 360" role="img" aria-labelledby="wdi-art-title">
+              <title id="wdi-art-title">Illustration of a home beside a clipboard holding a Texas WDI report</title>
+              <rect width="520" height="360" rx="28" fill="#fdf1eb"/>
+              <circle cx="96" cy="78" r="34" fill="#f59a5b"/>
+              <path d="M0 270c80-26 170-30 260-14s180 10 260-6v82a28 28 0 0 1-28 28H28a28 28 0 0 1-28-28Z" fill="#e2e3c4"/>
+              <g stroke="#2a2f45" stroke-width="5" stroke-linejoin="round">
+                <rect x="56" y="168" width="196" height="118" rx="5" fill="#fff8f0"/>
+                <path d="M38 176 154 98l116 78Z" fill="#c4431f"/>
+                <path d="M136 286v-52a18 18 0 0 1 36 0v52Z" fill="#f1a27f"/>
+                <rect x="78" y="196" width="40" height="36" rx="3" fill="#fdeee8"/>
+                <rect x="190" y="196" width="40" height="36" rx="3" fill="#fdeee8"/>
+              </g>
+              <path d="M98 196v36M78 214h40M210 196v36M190 214h40" stroke="#2a2f45" stroke-width="3.5"/>
+              <g transform="rotate(4 380 190)">
+                <rect x="292" y="74" width="180" height="236" rx="16" fill="#fff" stroke="#2a2f45" stroke-width="5"/>
+                <rect x="346" y="60" width="72" height="30" rx="9" fill="#c4431f" stroke="#2a2f45" stroke-width="5"/>
+                <text x="314" y="128" class="art-text art-text--title">WDI Report</text>
+                <text x="314" y="150" class="art-text">Texas form SPCS/T-5</text>
+                <g stroke="#2a2f45" stroke-width="3.5" fill="#fff">
+                  <rect x="316" y="172" width="20" height="20" rx="4"/><rect x="316" y="208" width="20" height="20" rx="4"/><rect x="316" y="244" width="20" height="20" rx="4"/>
+                </g>
+                <path d="M320 182l5 5 8-9M320 218l5 5 8-9M320 254l5 5 8-9" fill="none" stroke="#c4431f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M350 182h92M350 218h76M350 254h86" stroke="#d9c7b4" stroke-width="7" stroke-linecap="round"/>
+              </g>
+              <g stroke="#2a2f45" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="64" cy="318" r="16" fill="#f59a5b"/>
+                <path d="M80 318h44M110 318v11M120 318v8"/>
+              </g>
+              <circle cx="64" cy="318" r="5.5" fill="#fdf1eb"/>
+            </svg>
+          </div>
           <!-- PLACEHOLDER: WDI report price and turnaround -->
           <div class="wdi-price">
             <p class="wdi-price-label">Real-estate WDI report</p>
             <p class="wdi-price-num"><span class="price-from">from</span> $150 <span class="tag-sample">Sample</span></p>
             <p class="wdi-price-note">Report in 1&ndash;2 business days (sample)</p>
-            <a class="btn btn-sun" href="#inspect">Book a WDI inspection</a>
+            <a class="btn btn-primary" href="#inspect">Book a WDI inspection</a>
           </div>
           <div class="wdi-callout">
             <p><strong>Seeing winged insects indoors?</strong> Swarming termites inside a house usually indicate an active infestation. Subterranean termites occur throughout Texas, and Formosan termites have been detected in Denton County.</p>
@@ -415,18 +475,19 @@
           <h2 id="how-title">Inspect, treat, protect, follow up</h2>
         </div>
 
+        <!-- PLACEHOLDER: service process to be confirmed by the client -->
         <ol class="steps" role="list">
           <li class="step" data-reveal>
             <div class="step-ico" aria-hidden="true">
-              <svg viewBox="0 0 64 64"><circle cx="27" cy="27" r="14" fill="#e3f1ff" stroke="currentColor" stroke-width="3.5"/><path d="M37.5 37.5 50 50" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M21 23a8 8 0 0 1 6-5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
+              <svg viewBox="0 0 64 64"><circle cx="27" cy="27" r="14" fill="#fff" stroke="currentColor" stroke-width="3.5"/><path d="M37.5 37.5 50 50" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M21 23a8 8 0 0 1 6-5" fill="none" stroke="#f1a27f" stroke-width="3" stroke-linecap="round"/></svg>
             </div>
             <p class="step-num">Step 1</p>
             <h3>Inspect</h3>
-            <p>We inspect first, fix entry points and moisture, and treat only where needed.</p>
+            <p>We inspect first and treat only where needed.</p>
           </li>
           <li class="step" data-reveal>
             <div class="step-ico" aria-hidden="true">
-              <svg viewBox="0 0 64 64"><path d="M24 24h14l3 8v20a3 3 0 0 1-3 3H24a3 3 0 0 1-3-3V32Z" fill="#ffd978" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path d="M26 24v-7h10v7M36 17h8l4 4" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M52 16v.1M55 22v.1M52 28v.1" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M26 38h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+              <svg viewBox="0 0 64 64"><path d="M24 24h14l3 8v20a3 3 0 0 1-3 3H24a3 3 0 0 1-3-3V32Z" fill="#fff" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path d="M26 24v-7h10v7M36 17h8l4 4" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M52 16v.1M55 22v.1M52 28v.1" stroke="#c4431f" stroke-width="4" stroke-linecap="round"/><path d="M26 38h10" stroke="#c4431f" stroke-width="3" stroke-linecap="round"/></svg>
             </div>
             <p class="step-num">Step 2</p>
             <h3>Treat</h3>
@@ -434,19 +495,19 @@
           </li>
           <li class="step" data-reveal>
             <div class="step-ico" aria-hidden="true">
-              <svg viewBox="0 0 64 64"><path d="M12 30 32 13l20 17v21a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2Z" fill="#e4f5ea" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path d="M24 36l6 6 11-12" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg viewBox="0 0 64 64"><path d="M12 30 32 13l20 17v21a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2Z" fill="#fff" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path d="M8 54h48" stroke="#c4431f" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="1 7"/><path d="M26 53V40h12v13" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/></svg>
             </div>
             <p class="step-num">Step 3</p>
             <h3>Protect</h3>
-            <p>We'll tell you which products we used and how long to keep kids and pets off treated areas.</p>
+            <p>We fix entry points and moisture, then service the exterior perimeter, eaves and entry points every quarter. <span class="tag-sample">Sample</span></p>
           </li>
           <li class="step" data-reveal>
             <div class="step-ico" aria-hidden="true">
-              <svg viewBox="0 0 64 64"><rect x="11" y="15" width="42" height="38" rx="5" fill="#ffe9e2" stroke="currentColor" stroke-width="3.5"/><path d="M11 26h42M22 10v9M42 10v9" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><path d="M24 39l6 6 10-11" fill="none" stroke="#c4431f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg viewBox="0 0 64 64"><path d="M10 16a6 6 0 0 1 6-6h32a6 6 0 0 1 6 6v20a6 6 0 0 1-6 6H28l-10 9v-9h-2a6 6 0 0 1-6-6Z" fill="#fff" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path d="M20 22h24M20 30h16" stroke="#c4431f" stroke-width="3.5" stroke-linecap="round"/></svg>
             </div>
             <p class="step-num">Step 4</p>
             <h3>Follow up</h3>
-            <p>Quarterly visits, with free re-service between them if pests come back. <span class="tag-sample">Sample</span></p>
+            <p>We'll tell you which products we used and how long to keep kids and pets off treated areas. If pests come back between visits, so do we. <span class="tag-sample">Sample</span></p>
           </li>
         </ol>
 
@@ -462,22 +523,30 @@
       <div class="wrap">
         <!-- PLACEHOLDER: re-service guarantee terms to be confirmed by the client -->
         <div class="guarantee-card" data-reveal>
-          <svg class="guarantee-art" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-            <circle cx="100" cy="100" r="88" fill="#fff" opacity=".55"/>
-            <path d="M58 98 100 62l42 36v46a4 4 0 0 1-4 4H62a4 4 0 0 1-4-4Z" fill="#fff" stroke="#1e2b4f" stroke-width="6" stroke-linejoin="round"/>
-            <path d="M88 148v-28h24v28" fill="#ffc94a" stroke="#1e2b4f" stroke-width="6" stroke-linejoin="round"/>
-            <rect x="70" y="100" width="14" height="14" rx="2" fill="#cfe5ff" stroke="#1e2b4f" stroke-width="5"/>
-            <rect x="116" y="100" width="14" height="14" rx="2" fill="#cfe5ff" stroke="#1e2b4f" stroke-width="5"/>
-            <path d="M40 120a62 62 0 0 1 100-70" fill="none" stroke="#c4431f" stroke-width="7" stroke-linecap="round"/>
-            <path d="m128 38 14 12-16 8" fill="none" stroke="#c4431f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M160 80a62 62 0 0 1-100 70" fill="none" stroke="#c4431f" stroke-width="7" stroke-linecap="round"/>
-            <path d="m72 162-14-12 16-8" fill="none" stroke="#c4431f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="guarantee-copy">
-            <p class="eyebrow">Our re-service promise <span class="tag-sample">Sample</span></p>
-            <h2 id="guarantee-title">If pests come back, so do we.</h2>
-            <p>Free re-service between scheduled visits, on every plan.</p>
+          <div class="guarantee-head">
+            <svg class="guarantee-art" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+              <circle cx="100" cy="100" r="88" fill="#fff" opacity=".14"/>
+              <path d="M58 98 100 62l42 36v46a4 4 0 0 1-4 4H62a4 4 0 0 1-4-4Z" fill="#fff8f0" stroke="#2a2f45" stroke-width="6" stroke-linejoin="round"/>
+              <path d="M88 148v-28h24v28" fill="#f1a27f" stroke="#2a2f45" stroke-width="6" stroke-linejoin="round"/>
+              <rect x="70" y="100" width="14" height="14" rx="2" fill="#fdeee8" stroke="#2a2f45" stroke-width="5"/>
+              <rect x="116" y="100" width="14" height="14" rx="2" fill="#fdeee8" stroke="#2a2f45" stroke-width="5"/>
+              <path d="M40 120a62 62 0 0 1 100-70" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+              <path d="m128 38 14 12-16 8" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M160 80a62 62 0 0 1-100 70" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+              <path d="m72 162-14-12 16-8" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <p class="eyebrow">Re-service promise <span class="tag-sample tag-sample--on-accent">Sample</span></p>
+              <h2 id="guarantee-title">If pests come back, so do we.</h2>
+              <p class="guarantee-lede">Free re-service between scheduled visits, on every plan.</p>
+            </div>
           </div>
+          <ol class="g-steps" role="list">
+            <li><span class="g-num" aria-hidden="true">1</span><p><strong>Pests show up between visits</strong>Ants in the kitchen a month after service? That's covered.</p></li>
+            <li><span class="g-num" aria-hidden="true">2</span><p><strong>Call or send the form</strong>Tell us what you're seeing and where.</p></li>
+            <li><span class="g-num" aria-hidden="true">3</span><p><strong>We come back out</strong>The return visit is free.</p></li>
+          </ol>
+          <p class="g-fine">Sample terms for this demo. Your real re-service terms go here.</p>
         </div>
       </div>
     </section>
@@ -509,7 +578,7 @@
           <li class="review" data-reveal>
             <p class="review-tag">Sample review</p>
             <blockquote>
-              <p>Ants showed up again a few weeks after our quarterly visit. They came back out for free, on time, with a text the day before.</p>
+              <p>On time, with a text the day before. The fire ant mounds that took over our backyard are gone.</p>
             </blockquote>
             <p class="review-who">Priya, Flower Mound</p>
           </li>
@@ -521,15 +590,53 @@
     <section class="section contact" id="inspect" aria-labelledby="inspect-title" tabindex="-1">
       <div class="wrap contact-grid">
         <div class="contact-copy">
-          <p class="eyebrow">Service area</p>
+          <p class="eyebrow">Free inspection and service area</p>
           <h2 id="inspect-title">Get a free pest inspection</h2>
           <p class="section-lede">Based in Denton, TX, serving homes and businesses in seven nearby cities.</p>
-          <ul class="cities" aria-label="Cities we serve">
-            <li>Denton</li><li>Corinth</li><li>Argyle</li><li>Flower Mound</li><li>Lewisville</li><li>Aubrey</li><li>Sanger</li>
-          </ul>
-          <div class="contact-call">
-            <p>Rather talk it through?</p>
-            <a class="call-link" href="tel:+19405550187">(940) 555-0187</a> <span class="tag-sample">Sample</span>
+
+          <figure class="area-map">
+            <svg viewBox="0 0 520 400" role="img" aria-labelledby="map-title">
+              <title id="map-title">Simple area graphic, not to scale, showing Denton, Corinth, Argyle, Flower Mound, Lewisville, Aubrey and Sanger</title>
+              <rect width="520" height="400" rx="28" fill="#f6efe6"/>
+              <path d="M150 40c60-20 150-24 230 0s100 80 90 150-10 150-80 180-180 20-240-10-110-90-100-160 40-140 100-160Z" fill="#fff" stroke="#e2cdb5" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+              <path d="M232 78Q246 130 250 176M250 176Q300 220 326 252M326 252Q360 290 392 330M250 176Q214 226 192 276M192 276Q218 320 258 344M250 176Q326 130 384 104" fill="none" stroke="#f1a27f" stroke-width="4" stroke-dasharray="1 10" stroke-linecap="round"/>
+              <g class="map-pin"><path d="M232 78c-9-12-14-19-14-26a14 14 0 0 1 28 0c0 7-5 14-14 26Z" fill="#c4431f" stroke="#2a2f45" stroke-width="3"/><circle cx="232" cy="52" r="5" fill="#fff"/></g>
+              <g class="map-pin"><path d="M384 104c-9-12-14-19-14-26a14 14 0 0 1 28 0c0 7-5 14-14 26Z" fill="#c4431f" stroke="#2a2f45" stroke-width="3"/><circle cx="384" cy="78" r="5" fill="#fff"/></g>
+              <g class="map-pin"><path d="M326 252c-9-12-14-19-14-26a14 14 0 0 1 28 0c0 7-5 14-14 26Z" fill="#c4431f" stroke="#2a2f45" stroke-width="3"/><circle cx="326" cy="226" r="5" fill="#fff"/></g>
+              <g class="map-pin"><path d="M392 330c-9-12-14-19-14-26a14 14 0 0 1 28 0c0 7-5 14-14 26Z" fill="#c4431f" stroke="#2a2f45" stroke-width="3"/><circle cx="392" cy="304" r="5" fill="#fff"/></g>
+              <g class="map-pin"><path d="M192 276c-9-12-14-19-14-26a14 14 0 0 1 28 0c0 7-5 14-14 26Z" fill="#c4431f" stroke="#2a2f45" stroke-width="3"/><circle cx="192" cy="250" r="5" fill="#fff"/></g>
+              <g class="map-pin"><path d="M258 344c-9-12-14-19-14-26a14 14 0 0 1 28 0c0 7-5 14-14 26Z" fill="#c4431f" stroke="#2a2f45" stroke-width="3"/><circle cx="258" cy="318" r="5" fill="#fff"/></g>
+              <g>
+                <circle cx="250" cy="160" r="30" fill="#c4431f" stroke="#2a2f45" stroke-width="4"/>
+                <path d="M236 162l14-12 14 12v12h-28Z" fill="#fff" stroke="#2a2f45" stroke-width="3" stroke-linejoin="round"/>
+              </g>
+              <g class="map-label">
+                <text x="252" y="58">Sanger</text>
+                <text x="404" y="84">Aubrey</text>
+                <text x="290" y="168" class="map-label--main">Denton</text>
+                <text x="290" y="190" class="map-label--sub">Based here</text>
+                <text x="346" y="232">Corinth</text>
+                <text x="412" y="310">Lewisville</text>
+                <text x="172" y="256" text-anchor="end">Argyle</text>
+                <text x="238" y="324" text-anchor="end">Flower Mound</text>
+              </g>
+              <g class="map-compass" transform="translate(52 56)">
+                <circle r="20" fill="#fff" stroke="#e2cdb5" stroke-width="2"/>
+                <path d="M0-12 6 6 0 2-6 6Z" fill="#2a2f45"/>
+                <text y="-26" text-anchor="middle">N</text>
+              </g>
+              <text x="492" y="380" text-anchor="end" class="map-note">Not to scale</text>
+            </svg>
+            <figcaption>Denton, Corinth, Argyle, Flower Mound, Lewisville, Aubrey and Sanger. Graphic not to scale.</figcaption>
+          </figure>
+
+          <div class="next">
+            <h3>What happens next <span class="tag-sample">Sample</span></h3>
+            <ol role="list">
+              <li><span class="next-num" aria-hidden="true">1</span><p>Send the form, or call <a href="tel:+19405550187">(940) 555-0187</a> <span class="tag-sample">Sample</span></p></li>
+              <li><span class="next-num" aria-hidden="true">2</span><p>A licensed applicator inspects first. The inspection is free.</p></li>
+              <li><span class="next-num" aria-hidden="true">3</span><p>You choose a plan, with no long-term contract. Before any termite treatment, you get a written estimate with the warranty details.</p></li>
+            </ol>
           </div>
         </div>
 
@@ -568,7 +675,7 @@
                 <label class="check"><input type="checkbox" name="pest" value="rodents"><span>Rodents</span></label>
                 <label class="check"><input type="checkbox" name="pest" value="bed-bugs"><span>Bed bugs</span></label>
                 <label class="check"><input type="checkbox" name="pest" value="brown-recluse"><span>Brown recluse</span></label>
-                <label class="check check--wide"><input type="checkbox" name="pest" value="other"><span>Other / not sure</span></label>
+                <label class="check"><input type="checkbox" name="pest" value="other"><span>Other / not sure</span></label>
               </div>
             </fieldset>
 
