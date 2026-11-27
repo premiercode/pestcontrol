@@ -5,25 +5,8 @@
   var root = document.documentElement;
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Soft entrance: only hide content once we know we can reveal it again.
-  if (!reduce && "IntersectionObserver" in window) {
-    root.classList.add("js-motion");
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-in");
-          io.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.08 });
-
-    document.querySelectorAll("[data-reveal]").forEach(function (el, i) {
-      // Stagger siblings slightly so grids ripple in rather than pop.
-      var idx = Array.prototype.indexOf.call(el.parentNode.children, el);
-      el.style.transitionDelay = Math.min(idx, 5) * 60 + "ms";
-      io.observe(el);
-    });
-  }
+  // The hero drawing's sun and clouds animate in only when motion is allowed. No content is ever hidden.
+  if (!reduce) root.classList.add("js-motion");
 
   // Header gets a soft edge once the page scrolls.
   var header = document.querySelector(".site-header");

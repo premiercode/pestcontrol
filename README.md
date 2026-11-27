@@ -29,7 +29,7 @@ client's real, verified information before launch.
 - **TPCL business license number** (the sample is `TPCL #000000`).
 - **Phone number and email** (the samples are `(940) 555-0187` and `hello@example.com`).
 - **Trust points:** licensed applicators, no long-term contracts (Options A, B and C hero).
-- **Plan names, prices and inclusions** for Essential, Plus and Complete, the initial service price, and the "Recommended" mark on Option B.
+- **Plan names, prices and inclusions** for Essential, Plus and Complete and the initial service price.
 - **Real-estate WDI report** price and turnaround (sample: from $150, 1–2 business days).
 - **Re-service guarantee** wording, terms and limits.
 - **Service process** and the "what happens next" steps (Options B and C).

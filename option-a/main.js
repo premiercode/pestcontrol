@@ -2,7 +2,6 @@
 (function () {
   'use strict';
 
-  var root = document.documentElement;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var nativeScrollTimeline = window.CSS && CSS.supports && CSS.supports('animation-timeline: scroll()');
 
@@ -21,24 +20,6 @@
   }
 
   if (reduceMotion) return;
-
-  /* ---- Reveal on scroll (content is only hidden once this runs) ---- */
-  var revealEls = document.querySelectorAll('[data-reveal]');
-  if ('IntersectionObserver' in window && revealEls.length) {
-    root.classList.add('reveal-ready');
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var el = entry.target;
-          var siblings = Array.prototype.indexOf.call(el.parentNode.children, el);
-          el.style.transitionDelay = Math.min(siblings, 6) * 70 + 'ms';
-          el.classList.add('in');
-          io.unobserve(el);
-        }
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    revealEls.forEach(function (el) { io.observe(el); });
-  }
 
   /* ---- Fallback for browsers without CSS scroll-driven animations ---- */
   if (nativeScrollTimeline) return;
